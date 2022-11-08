@@ -1,30 +1,12 @@
-<<<<<<< Updated upstream
-string_of_money = input().split(", ")
-beggars_count = int(input())
-money_list = []
-beggar_index_counter = 0
-
-for beggar in range(beggars_count):
+money = input().split(", ")
+number_beggars = int(input())
+list_money = []
+counter_beggar = 0
+for beggar in range(number_beggars):
     current_sum = 0
-    for index in range(beggar_index_counter, len(string_of_money), beggars_count):
-        current_sum += int(string_of_money[index])
+    for index in range(counter_beggar, len(money), number_beggars):
+        current_sum += int(money[index])
+    list_money.append(current_sum)
+    counter_beggar += 1
 
-    money_list.append(current_sum)
-    beggar_index_counter += 1
-
-=======
-string_of_money = input().split(", ")
-beggars_count = int(input())
-money_list = []
-beggar_index_counter = 0
-
-for beggar in range(beggars_count):
-    current_sum = 0
-    for index in range(beggar_index_counter, len(string_of_money), beggars_count):
-        current_sum += int(string_of_money[index])
-
-    money_list.append(current_sum)
-    beggar_index_counter += 1
-
->>>>>>> Stashed changes
-print(money_list)
+print(list_money)

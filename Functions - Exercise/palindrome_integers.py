@@ -12,5 +12,3 @@ for num_as_str in nums_as_string:
         print(True)
     else:
         print(False)
-
-

@@ -14,4 +14,3 @@ if is_number_perfect(number):
     print("We have a perfect number!")
 else:
     print("It's not so perfect.")
-

@@ -1,59 +1,26 @@
-<<<<<<< Updated upstream
-n = int(input())
-numbers = []
-filtered = []
+number = int(input())
+even = []
+odd = []
+negative = []
+positive = []
 
-for i in range(n):
-    current_numbers = int(input())
-    numbers.append(current_numbers)
-
-command = input()
-if command == "even":
-    for number in numbers:
-        if number % 2 == 0:
-            filtered.append(number)
-if command == "odd":
-    for number in numbers:
-        if number % 2 != 0:
-            filtered.append(number)
-if command == "positive":
-    for number in numbers:
-        if number >= 0:
-            filtered.append(number)
-if command == "negative":
-    for number in numbers:
-        if number < 0:
-            filtered.append(number)
-
-print(filtered)
-
-=======
-n = int(input())
-numbers = []
-filtered = []
-
-for i in range(n):
-    current_numbers = int(input())
-    numbers.append(current_numbers)
+for num in range(number):
+    number = int(input())
+    if number % 2 == 0:
+        even.append(number)
+    if number % 2 != 0:
+        odd.append(number)
+    if number >= 0:
+        positive.append(number)
+    if number < 0:
+        negative.append(number)
 
 command = input()
 if command == "even":
-    for number in numbers:
-        if number % 2 == 0:
-            filtered.append(number)
-if command == "odd":
-    for number in numbers:
-        if number % 2 != 0:
-            filtered.append(number)
-if command == "positive":
-    for number in numbers:
-        if number >= 0:
-            filtered.append(number)
-if command == "negative":
-    for number in numbers:
-        if number < 0:
-            filtered.append(number)
-
-print(filtered)
-
->>>>>>> Stashed changes
+    print(even)
+elif command == "odd":
+    print(odd)
+elif command == "negative":
+    print(negative)
+elif command == "positive":
+    print(positive)

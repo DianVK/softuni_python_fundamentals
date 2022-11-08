@@ -1,30 +1,13 @@
-<<<<<<< Updated upstream
-numbers = int(input())
-key_word = input()
-
-words = []
+number = int(input())
+key = input()
+all_words = []
 key_words = []
 
-for _ in range(numbers):
-    word = input()
-    words.append(word)
-    if key_word in word:
-        key_words.append(word)
+for num in range(number):
+    words = input()
+    all_words.append(words)
+    if key in words:
+        key_words.append(words)
 
-print(words)
-=======
-numbers = int(input())
-key_word = input()
-
-words = []
-key_words = []
-
-for _ in range(numbers):
-    word = input()
-    words.append(word)
-    if key_word in word:
-        key_words.append(word)
-
-print(words)
->>>>>>> Stashed changes
+print(all_words)
 print(key_words)

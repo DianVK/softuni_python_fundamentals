@@ -1,14 +1,7 @@
-<<<<<<< Updated upstream
 factor = int(input())
 count = int(input())
-numbers = []
-for nums in range(1, count + 1):
-    numbers.append(nums * factor)
-=======
-factor = int(input())
-count = int(input())
-numbers = []
-for nums in range(1, count + 1):
-    numbers.append(nums * factor)
->>>>>>> Stashed changes
-print(numbers)
+list_numbers = []
+for num in range(1, count + 1):
+    list_numbers.append(num * factor)
+
+print(list_numbers)
