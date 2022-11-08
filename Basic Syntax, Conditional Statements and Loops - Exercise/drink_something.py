@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 age = int(input())
 if age <= 14:
     print("drink toddy")
@@ -6,4 +7,14 @@ elif age <= 18:
 elif age <= 21:
     print("drink beer")
 elif age > 21:
+=======
+age = int(input())
+if age <= 14:
+    print("drink toddy")
+elif age <= 18:
+    print("drink coke")
+elif age <= 21:
+    print("drink beer")
+elif age > 21:
+>>>>>>> Stashed changes
     print("drink whisky")
