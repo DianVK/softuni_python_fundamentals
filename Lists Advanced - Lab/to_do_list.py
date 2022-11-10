@@ -6,4 +6,5 @@ while command != "End":
     to_do_list[importance] = task
     command = input()
 
-print([item for item in to_do_list if item != 0])
+#print([item for item in to_do_list if item != 0])
+print(list(filter(lambda x: x != 0, to_do_list)))
