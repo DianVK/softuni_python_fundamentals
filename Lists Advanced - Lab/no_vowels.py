@@ -1,9 +1,10 @@
-list_of_items = input()
-list_to_remove = "aoueiAOUEI"
-result = [letter for letter in list_of_items if letter not in list_to_remove]
-print("".join(result))
+text = input()
+print(*[text[letter] for letter in range(len(text)) if text[letter] not in str("aoueiAOUEI")], sep="")
 
 # text = input()
-# string_to_remove = "aoueiAOUEI"
-# cleared_text = list(filter(lambda x: x not in string_to_remove, text))
-# print(*cleared_text, sep="")
+# letters_to_remove = "aoueiAOUEI"
+# new_text = []
+# for letter in range(len(text)):
+#     if text[letter] not in letters_to_remove:
+#         new_text.append(text[letter])
+# print(*new_text, sep="")

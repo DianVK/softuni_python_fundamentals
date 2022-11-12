@@ -1,3 +1,3 @@
 names = input().split(", ")
-result = sorted(names, key=lambda name: (-len(name), name))
-print(result)
+sorted_names = sorted(names, key=lambda name: (-len(name), name))
+print(sorted_names)

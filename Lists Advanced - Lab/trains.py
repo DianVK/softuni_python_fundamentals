@@ -1,6 +1,7 @@
 number_wagons = int(input())
 wagon = [0] * number_wagons
 command = input()
+
 while command != "End":
     data = command.split()
     if data[0] == "add":
