@@ -3,12 +3,11 @@ class Party:
         self.people = []
 
 
-party = Party()
-name = input()
+party_time = Party()
 
-while not name == "End":
-    party.people.append(name)
-    name = input()
+names = input()
+while names != "End":
+    party_time.people.append(names)
+    names = input()
 
-print(f"Going: {', '.join(party.people)}")
-print(f"Total: {len(party.people)}")
+print(f"Going: {', '.join(party_time.people)}\nTotal: {len(party_time.people)}")
