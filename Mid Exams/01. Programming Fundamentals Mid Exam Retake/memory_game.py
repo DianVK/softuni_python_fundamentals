@@ -1,47 +1,36 @@
-def check_comparison(el1, el2,items):
-    if items[el1] == items[el2]:
-        print(f"Congrats! You have found matching elements - {items[el1]}!")
-        item_to_remove = items[el1]
-        items.remove(item_to_remove)
-        items.remove(item_to_remove)
+def check_elements(index1):
+    global elements
+    print(f"Congrats! You have found matching elements - {elements[index1]}!")
+    elements = [item for item in elements if item != elements[index1]]
 
 
-
-def middle_of_elements(items):
-    middle = len(items) // 2
-    item_to_append = f"-{count_moves}a"
-    items.insert(middle, item_to_append)
-    items.insert(middle, item_to_append)
+def check_half():
+    middle = len(elements) // 2
+    elements.insert(middle, f"-{moves}a"), elements.insert(middle, f"-{moves}a")
     print("Invalid input! Adding additional elements to the board")
 
 
 elements = input().split()
-command = input()
-count_moves = 0
-he_won = False
-while command != "end":
-    current_command = command.split()
-    first_index = int(current_command[0])
-    second_index = int(current_command[1])
+moves = 0
+indexes = input()
 
-    if 0 <= first_index < len(elements) and 0 <= second_index <= len(elements):
-        if elements[first_index] == elements[second_index]:
-            count_moves += 1
-            check_comparison(first_index,second_index,elements)
-        elif elements[first_index] != elements[second_index]:
-            print("Try again!")
-    elif 0 > first_index or first_index > len(elements) or 0 > second_index or second_index > len(elements):
-        count_moves += 1
-        middle_of_elements(elements)
+while indexes != "end":
+    moves += 1
+    indexes = indexes.split()
+    first_index = int(indexes[0])
+    second_index = int(indexes[1])
+    out_of_bound_checker = [index for index in indexes if 0 > int(index) or int(index) >= len(elements)]
+    if out_of_bound_checker or first_index == second_index:
+        check_half()
+    elif elements[first_index] == elements[second_index]:
+        check_elements(first_index)
+    elif elements[first_index] != elements[second_index]:
+        print("Try again!")
+    if not len(elements):
+        print(f"You have won in {moves} turns!")
+        break
+    indexes = input()
 
-    if len(elements) == 0:
-        print(f"You have won in {count_moves} turns!")
-        he_won = True
-        exit()
-
-    command = input()
-
-if command == "end" and not he_won:
+if indexes == "end" and len(elements):
     print("Sorry you lose :(")
-
-print(*elements)
+    print(*elements, end=" ")
