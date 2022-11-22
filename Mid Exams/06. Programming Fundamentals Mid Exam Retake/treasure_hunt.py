@@ -1,42 +1,54 @@
 def loot(items):
-    del items[0]    # deleting the command , so it doesn't loop it too
+    del items[0]
     for item in items:
-        if item not in loot_in_chest:
-            loot_in_chest.insert(0, item)     # puts the current_shard at zero current_index
+        if item not in chest:
+            chest.insert(0, item)
 
 
-def drop(index):
-    index = int(index[1])  # making it from str to int
-    if abs(index) < len(loot_in_chest):   # checking if the current_index is in the range of the shuffled_cards
-        loot_in_chest.append(loot_in_chest.pop(index))
+def drop(item_index, items):
+    if item_index < len(items):
+        current_item = items[item_index]
+        items.pop(item_index)
+        items.append(current_item)
+        return items
 
 
-def steal(number_of_times):
-    global loot_in_chest
-    count_items = int(number_of_times[1])
-    stolen_items = loot_in_chest[-count_items:]
-    loot_in_chest = loot_in_chest[:-count_items]
-    print(*stolen_items, sep=", ")
+def steal(items,count):
+    removed_items = []
+    if count > len(items):
+        count = len(items)
+    for item in range(1, count + 1):
+        item = items[-1]
+        removed_items.append(item)
+        items.pop(-1)
+    removed_items.reverse()
+    print(", ".join(removed_items))
+    return items
 
 
-loot_in_chest = input().split("|")
+chest = input().split("|")
 command = input()
+
 while command != "Yohoho!":
-    if "Loot" in command:
+    current_command = command.split()
+    action = current_command[0]
+    if action == "Loot":
         loot(command.split())
-    elif "Drop" in command:
-        drop(command.split())
-    elif "Steal" in command:
-        steal(command.split())
+    elif action == "Drop":
+        index = int(current_command[1])
+        drop(index, chest)
+
+    elif action == "Steal":
+        count_items = int(current_command[1])
+        steal(chest,count_items)
+
     command = input()
 
-points_of_length_items = 0
-for item in loot_in_chest:
-    points_of_length_items += len(item)
-
-
-if len(loot_in_chest) > 0:
-    average_treasure_gain = points_of_length_items / len(loot_in_chest)
-    print(f"Average treasure gain: {average_treasure_gain:.2f} pirate credits.")
-elif len(loot_in_chest) == 0:
+if len(chest) > 0:
+    all_treasure_len = 0
+    for item in range(len(chest)):
+        all_treasure_len += len(chest[item])
+    average_gain = all_treasure_len / len(chest)
+    print(f"Average treasure gain: {average_gain:.2f} pirate credits.")
+else:
     print("Failed treasure hunt.")

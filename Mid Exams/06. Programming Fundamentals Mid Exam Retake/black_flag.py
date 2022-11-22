@@ -1,12 +1,11 @@
-count_days = int(input())
+days = int(input())
 plunder_for_day = int(input())
-expected_plunder = float(input())
+expected_plunder = int(input())
 total_plunder = 0
-
-for day in range(1, count_days + 1):
+for day in range(1, days + 1):
     total_plunder += plunder_for_day
     if day % 3 == 0:
-        total_plunder += plunder_for_day * 0.50
+        total_plunder += plunder_for_day / 2
     if day % 5 == 0:
         total_plunder = total_plunder * 0.70
 
