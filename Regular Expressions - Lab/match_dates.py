@@ -16,4 +16,3 @@ for el in range(len(results)):
         year = current_date[7] + current_date[8] + current_date[9] + current_date[10]
         print(f"Day: {day}, Month: {month}, Year: {year}")
         break
-
