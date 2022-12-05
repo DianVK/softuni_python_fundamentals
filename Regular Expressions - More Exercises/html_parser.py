@@ -1,10 +1,10 @@
 import re
 
-input_line = input()
+text_input = input()
 title_pattern = r'<title>(.+)<\/title>'
-match_title = re.search(title_pattern, input_line)
 content_pattern = r'>([^<>]*)<?'
-match_content = re.findall(content_pattern, input_line)
+match_title = re.search(title_pattern, text_input)
+match_content = re.findall(content_pattern, text_input)
 content = ''
 
 for part in match_content:
@@ -15,17 +15,3 @@ for part in match_content:
 print(f"Title: {match_title.group(1)}")
 print(f'Content: {content.strip()}')
 content = content.strip()
-
-
-
-
-
-
-
-
-
-# import re
-#
-# items = input()
-# title_pattern = re.compile(r'<title>(.+)<\/title>')
-# content_pattern = re.compile(r'')
