@@ -1,6 +1,6 @@
 import re
-names = input()
 
-pattern = r"\b[A-Z][a-z]+[ ][A-Z][a-z]+\b"
-matching_names = re.findall(pattern, names)
-print(' '.join(matching_names))
+names = input()
+name_pattern = r'\b[A-Z][a-z]+[ ][A-Z][a-z]+\b'
+check_name = re.findall(name_pattern, names)
+print(" ".join(check_name))
