@@ -1,6 +1,9 @@
 import re
-text = input()
-correct_text = r"(^_|(?<=\s_))[a-zA-Z0-9]+\b"
+sequence = input()
+text_pattern = re.compile(r"(^|(?<= ))_(?P<text>([A-Za-z]+))($|(?= ))")
+valid_pattern = text_pattern.finditer(sequence)
+texts = []
+for text in valid_pattern:
+    texts.append(text['text'])
 
-matched_text = [obj.group() for obj in re.finditer(correct_text,text)]
-print(*matched_text,sep=",")
+print(*texts,sep=",")
