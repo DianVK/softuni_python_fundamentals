@@ -1,11 +1,11 @@
 import re
+sequences = input()
+numbers_pattern = re.compile(r"(?P<numbers>\d+)")
+digits = []
+while sequences:
+    current_digits = numbers_pattern.finditer(sequences)
+    for digit in current_digits:
+        digits.append(digit['numbers'])
+    sequences = input()
 
-pattern = r"\d+"
-text_line = input()
-all_numbers = []
-while text_line != "":
-    numbers = re.findall(pattern,text_line)
-    all_numbers.extend(numbers)
-    text_line = input()
-
-print(*all_numbers)
+print(*digits)
