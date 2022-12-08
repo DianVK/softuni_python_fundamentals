@@ -1,46 +1,49 @@
-def take_odd():
-    global new_password
-    for char in range(len(password)):
-        if char % 2 != 0:
-            new_password += password[char]
-
-    print(new_password)
-
-
-def cut():
-    global new_password
-    cut_from = index
-    cut_to = index + length
-    empty_string = ""
-    new_password = new_password[0:cut_from] + new_password[cut_to:]
-    print(new_password)
-
-
-
-def substitute():
-    global new_password
-    if substring in new_password:
-        new_password = new_password.replace(substring, current_substitute)
-        print(new_password)
-    else:
-        print(f"Nothing to replace!")
-
-
 password = input()
-command = input()
-new_password = ""
-while command != "Done":
-    current_command = command.split()
-    action = current_command[0]
-    if action == "TakeOdd":
-        take_odd()
-    elif action == "Cut":
-        index,length = int(current_command[1]),int(current_command[2])
-        cut()
-    elif action == "Substitute":
-        substring,current_substitute = current_command[1],current_command[2]
-        substitute()
-    command = input()
+no_substring = False
 
-if command == "Done":
-    print(f"Your password is: {new_password}")
+
+def main():
+    global password
+    global no_substring
+    command = input()
+    while command != "Done":
+        command = command.split()
+        no_substring = False
+
+        if command[0] == "TakeOdd":
+            take_odd()
+
+        elif command[0] == "Cut":
+            cut(int(command[1]), int(command[2]))
+
+        elif command[0] == "Substitute":
+            substitute(command[1], command[2])
+
+        if not no_substring:
+            print(password)
+        command = input()
+
+    print(f"Your password is: {password}")
+
+
+def take_odd():
+    global password
+    password = password[1::2]
+
+
+def cut(index, length_of_word):
+    global password
+    password = password[:index] + password[index + length_of_word:]
+
+
+def substitute(substring, replacement_word):
+    global password
+    global no_substring
+    if substring in password:
+        password = password.replace(substring, replacement_word)
+    elif substring not in password:
+        no_substring = True
+        print("Nothing to replace!")
+
+
+main()
