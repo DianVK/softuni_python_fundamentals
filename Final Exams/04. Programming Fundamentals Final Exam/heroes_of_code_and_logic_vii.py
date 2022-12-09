@@ -35,7 +35,7 @@ def heal():
         print(f"{current_hero_name} healed for {diff} HP!")
 
 heroes = {}
-#"{hero name} {HP} {MP}"
+
 count_heroes = int(input())
 for hero in range(count_heroes):
     #hero_info = input().split()
