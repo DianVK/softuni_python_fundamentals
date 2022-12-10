@@ -1,7 +1,22 @@
 def plunder():
-    pass
+    global cities_info
+    cities_info[town]['population'] -= people
+    cities_info[town]['gold'] -= gold
+    print(f"{town} plundered! {gold} gold stolen, {people} citizens killed.")
+    if cities_info[town]['population'] <= 0 or cities_info[town]['gold'] <= 0:
+        print(f"{town} has been wiped off the map!")
+        del cities_info[town]
+
+
 def prosper():
-    pass
+    global cities_info
+    if gold > 0:
+        cities_info[town]['gold'] += gold
+        print(f"{gold} gold added to the city treasury. {town} now has {cities_info[town]['gold']} gold.")
+    else:
+        print("Gold added cannot be a negative number!")
+
+
 
 command = input()
 cities_info = {
@@ -16,10 +31,8 @@ while command != "Sail":
         cities_info[cities]['gold'] += gold
 
     command = input()
-print(cities_info)
 events = input()
 while events != "End":
-    #•	"Plunder=>{town}=>{people}=>{gold}"
     current_event = events.split("=>")
     action = current_event[0]
     if action == "Plunder":
@@ -29,3 +42,6 @@ while events != "End":
         town,gold = current_event[1],int(current_event[2])
         prosper()
     events = input()
+print(f"Ahoy, Captain! There are {len(cities_info)} wealthy settlements to go to:")
+for el in cities_info:
+    print(f"{el} -> Population: {cities_info[el]['population']} citizens, Gold: {cities_info[el]['gold']} kg")
