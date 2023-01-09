@@ -1,8 +1,8 @@
-def attack(all,atcks):
+def attack(all, atcks):
     destroyed_ships = 0
     for atck in range(len(atcks)):
         current_attack = atcks[atck]
-        current_row,current_column = [int(num) for num in current_attack.split("-")]
+        current_row, current_column = [int(num) for num in current_attack.split("-")]
         for r in range(len(all)):
             if r == current_row:
                 now_row = all[current_row]
