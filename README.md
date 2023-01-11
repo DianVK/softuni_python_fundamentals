@@ -1,1 +1,1 @@
-# Here you will find all tasks and exams completed from the Python Fundamentals course at Software University
+# In this repository, you can help yourself with solved by me - all tasks and exams from the Python Fundamentals course at Software University.
