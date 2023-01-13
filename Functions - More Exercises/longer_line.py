@@ -1,7 +1,7 @@
 from math import floor
 
 
-def check_center(sum1,sum2,sum3,sum4):
+def check_center(sum1, sum2, sum3, sum4):
     first_calculation = sum1 + sum2
     second_calculation = sum3 + sum4
     if first_calculation > second_calculation:

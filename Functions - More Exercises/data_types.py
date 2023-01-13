@@ -1,4 +1,4 @@
-def check_data_type(inp_type,el):
+def check_data_type(inp_type, el):
     result = ""
     if inp_type == "int":
         result = f"{int(el) * 2:.0f}"

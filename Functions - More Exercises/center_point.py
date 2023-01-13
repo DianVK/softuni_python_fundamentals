@@ -1,7 +1,7 @@
 from math import floor
 
 
-def check_center(sum1,sum2):
+def check_center(sum1, sum2):
     if sum1 <= sum2:
         return f"({x1}, {x2})"
     elif sum2 <= sum1:
