@@ -4,7 +4,7 @@ composers = []
 keys = []
 for el in range(number_pieces):
     current_piece = input()
-    piece,composer,key = current_piece.split("|")
+    piece, composer, key = current_piece.split("|")
     pieces.append(piece)
     composers.append(composer)
     keys.append(key)
@@ -14,7 +14,7 @@ while command != "Stop":
     current_command = command.split("|")
     action = current_command[0]
     if action == "Add":
-        piece, composer, key = current_command[1],current_command[2],current_command[3]
+        piece, composer, key = current_command[1], current_command[2], current_command[3]
         if piece in pieces:
             print(f"{piece} is already in the collection!")
         else:
@@ -34,7 +34,7 @@ while command != "Stop":
             print(f"Invalid operation! {piece} does not exist in the collection.")
 
     elif action == "ChangeKey":
-        piece,new_key = current_command[1],current_command[2]
+        piece, new_key = current_command[1], current_command[2]
         if piece in pieces:
             piece_index = pieces.index(piece)
             keys[piece_index] = new_key
