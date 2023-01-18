@@ -1,7 +1,7 @@
 command = input()
 phonebook = {}
 while len(command) != 1:
-    name,number = command.split("-")
+    name, number = command.split("-")
     if name not in phonebook:
         phonebook[name] = number
     else:

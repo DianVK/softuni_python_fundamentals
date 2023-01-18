@@ -38,6 +38,5 @@ while not legendary_item_found:
         if legendary_item_found:
             break
 
-
 for current_shard in legendary_items:
     print(f"{current_shard}: {legendary_items[current_shard]}")

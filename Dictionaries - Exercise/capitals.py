@@ -1,8 +1,8 @@
 country_names = input().split(", ")
 capital_cities = input().split(", ")
-country_information = {key: value for key,value in zip(country_names,capital_cities)}
+country_information = {key: value for key, value in zip(country_names, capital_cities)}
 
-[print(f"{country} -> {country_information[country]}")for country in country_information]
+[print(f"{country} -> {country_information[country]}") for country in country_information]
 
 # country_names = input().split(", ")
 # capital_cities = input().split(", ")

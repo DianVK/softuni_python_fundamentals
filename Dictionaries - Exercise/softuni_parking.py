@@ -19,8 +19,7 @@ for person in range(count_people):
             print(f"ERROR: user {person_name} not found")
         else:
             print(f"{person_name} unregistered successfully")
-            del(database[person_name])
+            del (database[person_name])
 
-
-for user,car_num in database.items():
+for user, car_num in database.items():
     print(f"{user} => {car_num}")
