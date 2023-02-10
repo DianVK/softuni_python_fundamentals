@@ -1,4 +1,5 @@
 numbers = int(input())
+
 for num in range(1, numbers + 1):
     number = int(input())
     if number == 88:

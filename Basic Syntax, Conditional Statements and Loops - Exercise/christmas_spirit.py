@@ -3,6 +3,7 @@ days_until_christmas = int(input())
 points = 0
 total_price = 0
 days_counter = 0
+
 for day in range(days_until_christmas, 0, -1):
     days_counter += 1
     if days_counter % 11 == 0:

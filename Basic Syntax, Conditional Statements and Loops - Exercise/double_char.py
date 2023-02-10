@@ -1,5 +1,6 @@
 new_word = ""
 word = input()
+
 while word != "End":
     if word == "SoftUni":
         word = input()
